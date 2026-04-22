@@ -15,7 +15,7 @@ public class Profesor extends Thread {
             for (int i = 0; i < cafesABeber; i++) {
                 deposito.retirarCafe(nombre);
                 Thread.sleep((long) (Math.random() * 10000)); //tiempo simulado para beber el café
-                //Tiene que ser mayor que el tiempo de preparado del café porque si no no me salen cafés en depósito
+                //tiene que ser mayor que el tiempo de preparado del café porque si no no me salen cafés en depósito
             }
             System.out.println("\n>> " + nombre + " ya ha tomado todos sus cafés\n");
         } catch (InterruptedException e) {

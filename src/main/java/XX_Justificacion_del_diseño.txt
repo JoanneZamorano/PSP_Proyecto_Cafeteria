@@ -1,0 +1,24 @@
+Justificación del diseño
+Para resolver este problema, he diseñado una solución basada en el patrón Productor-Consumidor, que es un clásico en la gestión de hilos.
+
+¿Qué es el recurso compartido?
+El recurso compartido es la instancia de la clase Deposito. Es el "punto de encuentro" donde la Cafetera (productor) y los Profesores (consumidores) interactúan.
+Lo que realmente estamos protegiendo aquí es la variable cafeActuales, porque si varios hilos intentaran leerla o modificarla a la vez sin control, el conteo de
+cafés fallaría.
+
+La clase Monitor
+He configurado la clase Deposito para que actúe como el Monitor del sistema. Al marcar los métodos dejarCafe() y retirarCafe() con la palabra clave synchronized,
+garantizo que solo un hilo pueda estar "dentro" del depósito en cada momento. Esto evita conflictos y asegura que el estado del depósito siempre sea coherente.
+
+El uso de wait() y notifyAll()
+Estos métodos son el "semáforo" de mi aplicación y los he ubicado estratégicamente dentro del monitor:
+
+wait(): Lo utilizo cuando un hilo no puede cumplir su tarea. Si la cafetera encuentra el depósito lleno o un profesor lo encuentra vacío, se quedan en espera.
+Lo importante es que lo hacen dentro de un bucle while; así, cuando se despiertan, vuelven a comprobar la condición por si acaso otro hilo se les ha adelantado.
+Esto evita que los hilos estén trabajando innecesariamente (espera activa).
+
+notifyAll(): Es la forma que tienen los hilos de comunicarse. Cada vez que la cafetera deja un café o un profesor se lleva uno, lanzan un "aviso general".
+Esto despierta a los que estaban esperando (wait), permitiendo que el programa siga fluyendo sin quedarse bloqueado en un punto muerto (deadlock).
+
+En conclusión: He diseñado el sistema para que sea seguro (nadie saca café si no hay) y eficiente (los hilos solo actúan cuando realmente pueden hacerlo),
+demostrando un control real sobre la concurrencia en Java.

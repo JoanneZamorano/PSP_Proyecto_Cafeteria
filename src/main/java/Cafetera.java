@@ -1,6 +1,6 @@
 public class Cafetera extends Thread {
     private final Deposito deposito;
-    private final int totalAProducir; //Limite de café diario
+    private final int totalAProducir; //limite de café diario
 
     public Cafetera(Deposito deposito, int total) {
         this.deposito = deposito;
@@ -11,7 +11,7 @@ public class Cafetera extends Thread {
     public void run() {
         try {
             for (int i = 0; i < totalAProducir; i++) {
-                Thread.sleep(500); // tiempo de preparación
+                Thread.sleep(500); //tiempo de preparación
                 deposito.dejarCafe();
             }
             System.out.println("\n------- Limite de cafés diarios ------- \n");

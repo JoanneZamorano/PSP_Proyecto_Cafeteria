@@ -22,7 +22,7 @@ public class Deposito {
         System.out.println("Cafetera prepara y deposita café nº " + idCafeActual + " | En depósito: " + cafeActuales);
         idCafeActual++;
 
-        notifyAll(); // Avisa a los profesores de que ya hay café
+        notifyAll(); //avisa a los profesores de que ya hay café
     }
 
     // Método para el profesor (Consumidor)
@@ -40,7 +40,7 @@ public class Deposito {
         cafeActuales--;
         System.out.println(">>Profesor " + nombreProfesor + " retira café nº" + idEntregado + " | En depósito: " + cafeActuales);
 
-        notifyAll(); // Avisa a la cafetera de que hay espacio libre
+        notifyAll(); //avisa a la cafetera de que hay espacio libre
         return idEntregado;
     }
 }

@@ -14,7 +14,7 @@ public class Cafetera extends Thread {
                 Thread.sleep(500); // tiempo de preparación
                 deposito.dejarCafe();
             }
-            System.out.println("\n Limite de cafés diarios\n");
+            System.out.println("\n------- Limite de cafés diarios ------- \n");
         } catch (InterruptedException e) {
             System.err.println("**** Cafetera interrumpida ****");
         }

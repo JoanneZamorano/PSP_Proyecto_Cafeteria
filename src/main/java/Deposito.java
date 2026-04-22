@@ -19,7 +19,7 @@ public class Deposito {
         }
 
         cafeActuales++;
-        System.out.println("Cafetera prepara y deposita Cafe-" + idCafeActual + " | En depósito: " + cafeActuales);
+        System.out.println("Cafetera prepara y deposita café nº " + idCafeActual + " | En depósito: " + cafeActuales);
         idCafeActual++;
 
         notifyAll(); // Avisa a los profesores de que ya hay café
@@ -38,7 +38,7 @@ public class Deposito {
 
         int idEntregado = idCafeActual - cafeActuales;
         cafeActuales--;
-        System.out.println(">> Profesor " + nombreProfesor + " retira Cafe-" + idEntregado + " | En depósito: " + cafeActuales);
+        System.out.println(">>Profesor " + nombreProfesor + " retira café nº" + idEntregado + " | En depósito: " + cafeActuales);
 
         notifyAll(); // Avisa a la cafetera de que hay espacio libre
         return idEntregado;

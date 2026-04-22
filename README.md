@@ -1,7 +1,12 @@
 # Cafetería automática del instituto: Programación Multihilo
 
-**Autor:** Susana Roldán Parra  
+**Profesora:** Susana Roldán Parra  
 **Fecha máxima de entrega:** 10 de Mayo del 2026 a las 23:59
+
+**Alumna:** Joanne M Zamorano
+
+**Módulo:** DAM - Programación Servicios y Procesos 
+
 
 ## Contexto del problema
 En un instituto se ha instalado una cafetería automática inteligente en la sala de profesores. La máquina prepara cafés bajo demanda, pero funciona de una forma particular:
